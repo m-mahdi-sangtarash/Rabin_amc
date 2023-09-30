@@ -71,7 +71,6 @@ def create_year(year_num):
     for m in month:
         create_sheet(exl, m)
 
-
     total_sheet(exl)
     exl.close()
 
@@ -82,7 +81,6 @@ def year_list():
 
 
 def mean_cal(year_num):
-    file = f'year_data/year-{year_num}.xlsx'
     dataframe = pd.read_excel(f'year_data/year-{year_num}.xlsx',
                               sheet_name=['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'total'])
 
@@ -104,9 +102,12 @@ def mean_cal(year_num):
 
             if categ == 'incomes':
                 sheet.iloc[row, sheet.columns.get_loc("year_tot_income")] = total
+                sheet.iloc[row, sheet.columns.get_loc("incomes_mean")] = (total / len(info))
+
             else:
-                pass
+                sheet.iloc[row, sheet.columns.get_loc("year_tot_cost")] = total
             info = []
+            total = 0
 
 
 def create_month_plot():
