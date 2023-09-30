@@ -106,6 +106,9 @@ def mean_cal(year_num):
 
             else:
                 sheet.iloc[row, sheet.columns.get_loc("year_tot_cost")] = total
+                sheet.iloc[row, sheet.columns.get_loc("costs_mean")] = (total / len(info))
+
+
             info = []
             total = 0
 
