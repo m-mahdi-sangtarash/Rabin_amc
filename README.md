@@ -1,3 +1,3 @@
 ### Rabin Account manager sofware
 
-decrebtion: comming soon:)
+decrebtion: comming soon :)
