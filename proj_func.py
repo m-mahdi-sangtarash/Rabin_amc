@@ -37,27 +37,29 @@ def create_sheet(exl, month):
 
 def total_sheet(exl):
     worksheet = exl.add_worksheet('total')
-    tot_category = ['incomes_mean', 'incomes_mean_per', 'costs_mean', 'cost_mean_per', 'year_tot_income',
+    tot_category = ['incomes_total', 'incomes_tot_per', 'incomes_mean', 'incomes_mean_per', 'costs_total', 'costs_tot_per', 'costs_mean', 'cost_mean_per', 'year_tot_income',
                     'year_tot_cost', 'left_over_year', 'lo_before', 'total_left_over']
 
     col = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']
-    col_onest = ['E', 'F', 'G', 'H', 'I']
+    col_onest = ['I', 'J', 'K', 'L', 'M']
     sub = 0
 
     for k in col:
         worksheet.write(f'{k}1', tot_category[sub])
         sub += 1
+
     for row in range(2, 20):
         worksheet.write(f'A{row}', 0)
-
-    for row in range(2, 20):
         worksheet.write(f'B{row}', 0)
-
-    for row in range(2, 21):
         worksheet.write(f'C{row}', 0)
+        worksheet.write(f'D{row}', 0)
 
     for row in range(2, 21):
-        worksheet.write(f'D{row}', 0)
+        worksheet.write(f'E{row}', 0)
+        worksheet.write(f'F{row}', 0)
+        worksheet.write(f'G{row}', 0)
+        worksheet.write(f'H{row}', 0)
+
 
     for colms in col_onest:
         worksheet.write(f'{colms}2', 0)
