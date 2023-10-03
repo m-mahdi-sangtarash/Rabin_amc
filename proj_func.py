@@ -21,14 +21,10 @@ def create_sheet(exl, month):
 
     for row in range(2, 20):
         worksheet.write(f'A{row}', 0)
-
-    for row in range(2, 20):
         worksheet.write(f'B{row}', 0)
 
     for row in range(2, 21):
         worksheet.write(f'C{row}', 0)
-
-    for row in range(2, 21):
         worksheet.write(f'D{row}', 0)
 
     for colms in col_onest:
