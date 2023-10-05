@@ -33,10 +33,11 @@ def create_sheet(exl, month):
 
 def total_sheet(exl):
     worksheet = exl.add_worksheet('total')
-    tot_category = ['incomes_total', 'incomes_tot_per', 'incomes_mean', 'incomes_mean_per', 'costs_total', 'costs_tot_per', 'costs_mean', 'cost_mean_per', 'year_tot_income',
+    tot_category = ['incomes_total', 'incomes_tot_per', 'incomes_mean', 'incomes_mean_per', 'costs_total',
+                    'costs_tot_per', 'costs_mean', 'cost_mean_per', 'year_tot_income',
                     'year_tot_cost', 'left_over_year', 'lo_before', 'total_left_over']
 
-    col = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']
+    col = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M']
     col_onest = ['I', 'J', 'K', 'L', 'M']
     sub = 0
 
@@ -55,7 +56,6 @@ def total_sheet(exl):
         worksheet.write(f'F{row}', 0)
         worksheet.write(f'G{row}', 0)
         worksheet.write(f'H{row}', 0)
-
 
     for colms in col_onest:
         worksheet.write(f'{colms}2', 0)
@@ -89,7 +89,6 @@ def mean_cal(year_num):
     total = 0
     sheet = dataframe['total']
 
-
     for per_categ in categor:
         for row in range(0, 19):
             for month_check in month:
@@ -121,7 +120,8 @@ def mean_cal(year_num):
             total += collector
 
         if per_categ == 'incomes_mean_per':
-            sheet.iloc[row, sheet.columns.get_loc("incomes_mean_per")] = ((sheet.iloc[row, sheet.columns.get_loc("incomes_mean")]/total))
+            sheet.iloc[row, sheet.columns.get_loc("incomes_mean_per")] = (
+                (sheet.iloc[row, sheet.columns.get_loc("incomes_mean")] / total))
             sheet.iloc[row, sheet.columns.get_loc("incomes_mean_per")] = (total / len(info))
 
         else:
