@@ -142,6 +142,7 @@ def mean_cal_fh_year(year_num):
     sheet = dataframe['total']
 
 
+
 def create_month_plot():
     my_salary_list = []
     eng_income_list = []
