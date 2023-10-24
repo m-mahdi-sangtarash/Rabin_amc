@@ -78,7 +78,7 @@ def year_list():
     return os_lst
 
 
-def mean_cal(year_num):
+def mean_cal_year(year_num):
     dataframe = pd.read_excel(f'year_data/year-{year_num}.xlsx',
                               sheet_name=['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'total'])
 
@@ -130,6 +130,16 @@ def mean_cal(year_num):
 
         info = []
         total = 0
+
+
+def mean_cal_fh_year(year_num):
+    dataframe = pd.read_excel(f'year_data/year-{year_num}.xlsx', sheet_name=['1', '2', '3', '4', '5', '6'])
+    month = ['1', '2', '3', '4', '5', '6']
+    categor = ['incomes', 'costs']
+    per_categor = ['incomes_mean_per', 'cost_mean_per']
+    info = []
+    total = 0
+    sheet = dataframe['total']
 
 
 def create_month_plot():
@@ -228,7 +238,3 @@ def percent_year():
     plt.pie(income_lst, explode=([0.05, 0.05, 0.05]))
     plt.show()
 
-
-create_year(1402)
-
-mean_cal(1402)
