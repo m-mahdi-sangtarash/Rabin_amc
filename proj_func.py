@@ -89,17 +89,17 @@ def mean_cal_year(year_num):
     total = 0
     sheet = dataframe['total']
 
-    for per_categ in categor:
+    for cat in categor:
         for row in range(0, 19):
             for month_check in month:
                 try:
-                    info.append(dataframe[month_check][per_categ][row])
+                    info.append(dataframe[month_check][cat][row])
                 except ValueError or KeyError:
                     continue
                 for collector in info:
                     total += collector
 
-                if per_categ == 'incomes':
+                if cat == 'incomes':
                     sheet.iloc[row, sheet.columns.get_loc("year_tot_income")] = total
                     sheet.iloc[row, sheet.columns.get_loc("incomes_mean")] = (total / len(info))
 
@@ -140,8 +140,41 @@ def mean_cal_fh_year(year_num):
     info = []
     total = 0
     sheet = dataframe['total']
+    for cat in categor:
+        for row in range(0, 19):
+            for month_check in month:
+                try:
+                    info.append(dataframe[month_check][cat][row])
+                except ValueError or KeyError:
+                    continue
+                for collector in info:
+                    total += collector
 
+                if cat == 'incomes':
+                    sheet.iloc[row, sheet.columns.get_loc("year_tot_income")] = total
+                    sheet.iloc[row, sheet.columns.get_loc("incomes_mean")] = (total / len(info))
 
+                else:
+                    sheet.iloc[row, sheet.columns.get_loc("year_tot_cost")] = total
+                    sheet.iloc[row, sheet.columns.get_loc("costs_mean")] = (total / len(info))
+
+    for per_categ in per_categor:
+        for row in range(0, 19):
+            try:
+                info.append(dataframe['total'][per_categ][row])
+            except ValueError or KeyError:
+                continue
+        for collector in info:
+            total += collector
+
+        if per_categ == 'incomes_mean_per':
+            sheet.iloc[row, sheet.columns.get_loc("incomes_mean_per")] = (
+                (sheet.iloc[row, sheet.columns.get_loc("incomes_mean")] / total))
+            sheet.iloc[row, sheet.columns.get_loc("incomes_mean_per")] = (total / len(info))
+
+        else:
+            sheet.iloc[row, sheet.columns.get_loc("year_tot_cost")] = total
+            sheet.iloc[row, sheet.columns.get_loc("costs_mean")] = (total / len(info))
 
 def create_month_plot():
     my_salary_list = []
