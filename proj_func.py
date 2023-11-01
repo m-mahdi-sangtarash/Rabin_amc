@@ -168,13 +168,13 @@ def mean_cal_fh_year(year_num):
             total += collector
 
         if per_categ == 'incomes_mean_per':
-            sheet.iloc[row, sheet.columns.get_loc("incomes_mean_per")] = (
-                (sheet.iloc[row, sheet.columns.get_loc("incomes_mean")] / total))
-            sheet.iloc[row, sheet.columns.get_loc("incomes_mean_per")] = (total / len(info))
+            sheet.iloc[row, sheet.columns.get_loc("fh_incomes_mean_per")] = (
+                (sheet.iloc[row, sheet.columns.get_loc("fh_incomes_mean")] / total))
+            sheet.iloc[row, sheet.columns.get_loc("fh_incomes_mean_per")] = (total / len(info))
 
         else:
-            sheet.iloc[row, sheet.columns.get_loc("year_tot_cost")] = total
-            sheet.iloc[row, sheet.columns.get_loc("costs_mean")] = (total / len(info))
+            sheet.iloc[row, sheet.columns.get_loc("fh_year_tot_cost")] = total
+            sheet.iloc[row, sheet.columns.get_loc("fh_costs_mean")] = (total / len(info))
 
 def create_month_plot():
     my_salary_list = []
