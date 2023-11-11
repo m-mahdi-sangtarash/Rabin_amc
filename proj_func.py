@@ -272,3 +272,6 @@ def percent_year():
     plt.pie(income_lst, explode=([0.05, 0.05, 0.05]))
     plt.show()
 
+def add_income(amount, category_num, year_num, month_num):
+    dataframe = pd.read_excel(f'year_data/year-{year_num}.xlsx',
+                              sheet_name=['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'total'])
