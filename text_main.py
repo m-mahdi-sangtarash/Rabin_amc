@@ -35,8 +35,27 @@ class Selection_Screen:
 class Add_income:
     amount = int(input('Amount: '))
     category = int(input('\nCategory?'
-                         '\n1.'))
-
+                         '\n1.حقوق من'
+                         '\n2.مهندسی'
+                         '\n3.یارانه'
+                         '\n4.وام از'
+                         '\n5.قرض از'
+                         '\n6.حقوق خ'
+                         '\n7.اجاره'
+                         '\n8.آموزشگاه'
+                         '\n9.سود سپرده'
+                         '\n10.فروش دارایی'
+                         '\n11.سود سهام من'
+                         '\n12.سود سهام خ'
+                         '\n13.دریافت طلب'
+                         '\n14.از بیمه'
+                         '\n15.از مزرعه'
+                         '\n16.امانت'
+                         '\n17.خدمت'
+                         '\n18.سایر'
+                         '\ncategory number: '))
+    month = int(input('\nenter month number: '))
+    pf.add_income(amount, category, ye)
 print('1.Add a income'
       '\n2.Add a cost'
       '\n3.Charts'
@@ -45,4 +64,4 @@ print('1.Add a income'
 
 task = int(input('Please enter task number: '))
 
-if task == 1:
+#if task == 1:
