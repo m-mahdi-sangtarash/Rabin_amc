@@ -5,8 +5,8 @@ class Add_income:
     def __init__(self, year_num):
         self.year_num = year_num
 
-
-    def selection_screen(self):
+    @staticmethod
+    def selection_screen():
         year_lst = pf.year_list()
         if not year_lst:
             print('\n1.Create a new year'
@@ -37,9 +37,9 @@ class Add_income:
             elif task == 3:
                 exit()
 
-
     @staticmethod
     def add_income(year_num):
+        print('\nIf you want back to menu, press ESC on your keyboard')
         amount = int(input('Amount: '))
         category = int(input('\nCategory?'
                              '\n1.حقوق من'
@@ -63,14 +63,5 @@ class Add_income:
                              '\ncategory number: '))
         month = int(input('\nenter month number: '))
         pf.add_income(amount, category, year_num, month)
-
-
-print('1.Add a income'
-      '\n2.Add a cost'
-      '\n3.Charts'
-      '\n4.Facts and Figures'
-      '\n5.Back')
-
-task = int(input('Please enter task number: '))
 
 # if task == 1:
