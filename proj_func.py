@@ -176,6 +176,7 @@ def mean_cal_fh_year(year_num):
             sheet.iloc[row, sheet.columns.get_loc("fh_year_tot_cost")] = total
             sheet.iloc[row, sheet.columns.get_loc("fh_costs_mean")] = (total / len(info))
 
+
 def create_month_plot():
     my_salary_list = []
     eng_income_list = []
@@ -271,6 +272,7 @@ def percent_year():
     income_lst = np.array(income_lst)
     plt.pie(income_lst, explode=([0.05, 0.05, 0.05]))
     plt.show()
+
 
 def add_income(amount, category_num, year_num, month_num):
     dataframe = pd.read_excel(f'year_data/year-{year_num}.xlsx',
