@@ -89,5 +89,8 @@ year = text_menu.selection_screen()
 while True:
     task = text_menu.main_menu()
     if task == 1:
+        text_menu.add_income(year)
+
+    elif task == 2:
         pass
 
