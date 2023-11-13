@@ -1,7 +1,7 @@
 import proj_func as pf
 
 
-class Add_income:
+class text_menu:
     def __init__(self, year_num):
         self.year_num = year_num
 
@@ -12,9 +12,11 @@ class Add_income:
             print('\n1.Create a new year'
                   '\n2.Quit')
             task = int(input('Please choose: '))
+
             if task == 1:
                 year_num = int(input('Enter year number: '))
                 pf.create_year(year_num)
+
             elif task == 2:
                 exit()
 
@@ -28,20 +30,38 @@ class Add_income:
                 for year in year_lst:
                     print(f'{on}.{year}')
                     on += 1
-                task = int(input('\nChoose year: '))
+
+                num_lst = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+                c_year = ''
+                year_choice = int(input('\n\nChoose year: '))
+                for i in year_lst[year_choice]:
+                    if i in num_lst:
+                        c_year += i
+                c_year = int(c_year)
+                return c_year
 
             elif task == 2:
-                year_num = int(input('\nEnter year number: '))
+                year_num = int(input('\n\nEnter year number: '))
                 pf.create_year(year_num)
+                return year_num
 
             elif task == 3:
                 exit()
 
     @staticmethod
+    def main_menu():
+        print('\n\n-------------------------------------'
+              '\n|1.Add income  | 2.Add Cost         |'
+              '\n|3.Charts      | 4.Facts and Figures|'
+              '\n-------------------------------------')
+        task = int(input('\n\nEnter task number: '))
+        return task
+
+    @staticmethod
     def add_income(year_num):
-        print('\nIf you want back to menu, press ESC on your keyboard')
+        print('\n\nIf you want back to menu, press ESC on your keyboard')
         amount = int(input('Amount: '))
-        category = int(input('\nCategory?'
+        category = int(input('\n\nCategory?'
                              '\n1.حقوق من'
                              '\n2.مهندسی'
                              '\n3.یارانه'
@@ -61,7 +81,13 @@ class Add_income:
                              '\n17.خدمت'
                              '\n18.سایر'
                              '\ncategory number: '))
-        month = int(input('\nenter month number: '))
+        month = int(input('\n\nenter month number: '))
         pf.add_income(amount, category, year_num, month)
 
-# if task == 1:
+
+year = text_menu.selection_screen()
+while True:
+    task = text_menu.main_menu()
+    if task == 1:
+        pass
+
