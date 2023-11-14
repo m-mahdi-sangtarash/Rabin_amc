@@ -84,6 +84,31 @@ class text_menu:
         month = int(input('\n\nenter month number: '))
         pf.add_income(amount, category, year_num, month)
 
+    def add_cost(self,year_num):
+        print('\n\nIf you want back to menu, press ESC on your keyboard')
+        amount = int(input('Amount: '))
+        category = int(input('\n\nCategory?'
+                             '\n1.حقوق من'
+                             '\n2.مهندسی'
+                             '\n3.یارانه'
+                             '\n4.وام از'
+                             '\n5.قرض از'
+                             '\n6.حقوق خ'
+                             '\n7.اجاره'
+                             '\n8.آموزشگاه'
+                             '\n9.سود سپرده'
+                             '\n10.فروش دارایی'
+                             '\n11.سود سهام من'
+                             '\n12.سود سهام خ'
+                             '\n13.دریافت طلب'
+                             '\n14.از بیمه'
+                             '\n15.از مزرعه'
+                             '\n16.امانت'
+                             '\n17.خدمت'
+                             '\n18.سایر'
+                             '\ncategory number: '))
+        month = int(input('\n\nenter month number: '))
+        pf.add_cost(amount, category, year_num, month)
 
 year = text_menu.selection_screen()
 while True:
@@ -92,5 +117,24 @@ while True:
         text_menu.add_income(year)
 
     elif task == 2:
-        pass
+        text_menu.add_cost(year)
+
+    elif task == 3:
+        print('\n\n---------------------------------------------------------'
+              '\n| 1.First half of year mean |  2.Second half of year mean|'
+              '\n| 3.Year Total mean          |  4.moredi income chart     |'
+              '\n| 4.moredi cost chart        |                            |'
+              '\n-----------------------------------------------------------')
+        task = int(input('\n\nEnter task number: '))
+        if task == 1:
+            pass
+        elif task == 2:
+            pass
+        elif task == 3:
+            pass
+        elif task == 4:
+            pass
+        elif task == 5:
+            pass
+
 
