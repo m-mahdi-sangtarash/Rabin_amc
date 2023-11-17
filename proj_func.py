@@ -265,13 +265,7 @@ def create_month_plot():
 
 
 def percent_year():
-    # data = pd.read_excel(f'year-{year_num}.xlsx', 'total')
-    income_lst = [343545, 123346, 458745]
-    # for check in range(1, 19):
-    # income_lst.append(data['income'][check])
-    income_lst = np.array(income_lst)
-    plt.pie(income_lst, explode=([0.05, 0.05, 0.05]))
-    plt.show()
+    pass
 
 
 def add_income(amount, category_num, year_num, month_num):
