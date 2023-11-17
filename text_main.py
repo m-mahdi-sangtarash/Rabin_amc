@@ -120,8 +120,8 @@ while True:
         text_menu.add_cost(year)
 
     elif task == 3:
-        print('\n\n---------------------------------------------------------'
-              '\n| 1.First half of year mean |  2.Second half of year mean|'
+        print('\n\n-----------------------------------------------------------'
+              '\n| 1.First half of year mean  |  2.Second half of year mean|'
               '\n| 3.Year Total mean          |  4.moredi income chart     |'
               '\n| 4.moredi cost chart        |                            |'
               '\n-----------------------------------------------------------')
