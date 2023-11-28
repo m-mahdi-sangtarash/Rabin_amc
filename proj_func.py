@@ -272,8 +272,7 @@ def add_income(amount, category_num, year_num, month_num):
     dataframe = pd.read_excel(f'year_data/year-{year_num}.xlsx',
                               sheet_name=['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'total'])
     sheet = dataframe[f'{month_num}']
-    sheet.iloc[category_num, sheet.columns.get_loc('incomes')] = amount
-
+    sheet.iloc[category_num, sheet.columns.get_loc("incomes")] = amount
 def add_cost(amount, category_num, year_num, month_num):
     dataframe = pd.read_excel(f'year_data/year-{year_num}.xlsx',
                               sheet_name=['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'total'])
